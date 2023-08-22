@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="icons/book-50.png" type="image/x-icon" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/colors.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Antrian</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="title">Antrian</h1>
+        <button id="add-btn" class="btn">
+          <img
+            src="icons/add-book-50.png"
+            alt="add-book"
+            class="icon icon--invert"
+          />
+          Tambah Antrian
+        </button>
+      </header>
+
+      <section>
+        <input
+          id="filterBookTitle"
+          class="filter-input"
+          type="text"
+          placeholder="Filter berdasarkan nama, nim atau nomor antrian ..."
+        />
+      </section>
+
+      <main class="shelves-wrapper">
+        <section class="shelf">
+          <h2 class="title">Belum terpanggil</h2>
+          <table id="belum_terpanggil" class="book-list"></table>
+        </section>
+
+        <section class="shelf complete-bookshelf">
+          <h2 class="title">Sudah terpanggil</h2>
+          <table id="sudah_terpanggil" class="book-list"></table>
+        </section>
+      </main>
+    </div>
+
+    <div id="add-modal" class="modal">
+      <div class="modal-content">
+        <h2 class="modal-title">Masukkan Antrian Baru</h2>
+        <form id="inputBook">
+          <div class="input">
+            <label for="inputBookAuthor">Nama</label>
+            <input id="inputBookAuthor" type="text" required />
+          </div>
+          <div class="input">
+            <label for="inputBookYear">NIM</label>
+            <input
+              id="inputBookYear"
+              type="number"
+              min="500000000"
+              max="599999999"
+              required
+            />
+          </div>
+          <div class="input-inline">
+            <input id="inputBookIsComplete" type="checkbox" />
+            <label for="inputBookIsComplete">Berkas Lengkap</label>
+          </div>
+          <div class="button-wrapper">
+            <button id="bookSubmit" class="btn" type="submit">
+              Tambah Antrian
+            </button>
+            <button class="btn secondary" type="reset">Batal</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="edit-modal" class="modal">
+      <div class="modal-content">
+        <h2 class="modal-title">Edit Antrian</h2>
+        <form id="editBookForm">
+          <input type="hidden" id="editBookId" />
+          <div class="input">
+            <label for="editBookAuthor">Nama</label>
+            <input id="editBookAuthor" type="text" required />
+          </div>
+          <div class="input">
+            <label for="editBookYear">NIM</label>
+            <input
+              id="editBookYear"
+              type="number"
+              min="500000000"
+              max="599999999"
+              required
+            />
+          </div>
+          <div class="input-inline">
+            <input id="editBookIsComplete" type="checkbox" />
+            <label for="editBookIsComplete">Berkas Lengkap</label>
+          </div>
+          <div class="button-wrapper">
+            <button class="btn" type="submit">Simpan Perubahan</button>
+            <button class="btn secondary" type="reset">Batal</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="popup-modal" class="modal">
+      <div class="modal-content">
+        <h4 id="popupText" class="text-center"></h4>
+        <form id="popupForm">
+          <div class="button-wrapper">
+            <button class="btn danger" type="submit">Yakin</button>
+            <button class="btn secondary" type="reset">Batal</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/modal.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/elements.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/event-listeners.js"></script>
+    <script src="js/dumpdata.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

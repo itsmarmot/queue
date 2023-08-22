@@ -1,0 +1,68 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-dark-alpha);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  transition: 0.3s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.modal-content {
+  background-color: var(--bg-dark-2);
+  max-width: 400px;
+  width: 80%;
+  padding: 1.2em 1.8em;
+  border-radius: 0.5em;
+
+  transition: 0.3s ease;
+  transform: translateY(-1em);
+}
+
+.modal.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+}
+
+.modal-title {
+  text-align: center;
+  color: var(--primary, #39f);
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.modal-content .input input {
+  width: 100%;
+  margin-top: 0.3em;
+}
+
+.modal-content .input-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.modal-content .button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.modal-content .button-wrapper > * {
+  flex: auto;
+}

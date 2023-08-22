@@ -1,0 +1,159 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark, #123);
+  color: var(--white);
+}
+
+body,
+input,
+button {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+input,
+.btn {
+  border: none;
+  outline: none;
+  font-size: 1em;
+  border-radius: 0.3em;
+  padding: 0.8em 1em;
+}
+
+input {
+  display: block;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: 0.2em;
+  flex-wrap: wrap;
+
+  cursor: pointer;
+  background-color: var(--primary, #39f);
+  color: var(--white);
+}
+
+.btn--small {
+  font-size: 0.8em;
+  padding: 0.4em 0.5em;
+}
+
+.success {
+  background-color: var(--success, #383);
+}
+
+.danger {
+  background-color: var(--danger, #f33);
+}
+
+.secondary {
+  background-color: var(--secondary, #345);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.icon {
+  pointer-events: none;
+  height: 1em;
+  width: 1em;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.icon--invert {
+  filter: invert(1);
+}
+
+.container {
+  max-width: 800px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 3em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-input {
+  background-color: var(--bg-dark-2);
+  color: var(--white);
+  width: 100%;
+}
+
+.filter-input::placeholder {
+  font-style: italic;
+}
+
+.shelves-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
+  padding: 0;
+  gap: 1em;
+  background-color: transparent;
+}
+
+.shelf {
+  font-size: 0.8em;
+  background-color: var(--bg-dark-2);
+  border-radius: 0.5em;
+  padding: 1.4em;
+  height: max-content;
+}
+
+.book-list {
+  border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.book-list tr.hidden {
+  display: none;
+}
+
+.book-list td,
+.book-list th {
+  padding: 1em;
+}
+
+.book-list th {
+  border-bottom: 2px solid var(--secondary);
+}
+
+.book-list td {
+  border-bottom: 1px solid var(--secondary);
+}
+
+.action-field {
+  display: flex;
+  gap: 0.8em;
+}
+
+/* .book-item {
+  border: 1px solid var(--white);
+  border-radius: 0.3em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+} */
+
+/* .book-item .action {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.7em;
+  gap: 0.4em;
+} */
